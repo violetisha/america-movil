@@ -1,0 +1,102 @@
+include includes/mixines
+!!! 5
+html
+	include includes/head
+	include includes/scripts
+	
+	body
+
+		header.row.container
+			#logo.span_4.col
+				img(src="img/logo-america-movil.png")
+
+			#meta.span_8.col
+				a(href="#") 
+					span.icon-envelope
+					|  Contacto
+				a(href="#") 
+					span.icon-rss
+					|  RSS
+				a(href="#") 
+					span.icon-flag
+					|  English
+			#search.span_8.col
+				input(type="text")
+				span.icon-search
+			nav.span_8.col
+				ul
+					li
+						a(href="#") Presencia
+					li
+						a(href="#") Relaciones con Inversionistas 
+					li
+						a(href="#") Nosotros
+					li
+						a(href="#") Sala de Prensa
+
+		#magazine
+			.container
+				#news.span_4
+					- for (var j = 1; j <= 3; ++j) {
+					.new
+						h2 Cupcake ipsum dolor sit amet gummies
+						p México DF a 30 de mayo de 2013
+						.actions
+							a(href="#") ver más +
+					- }
+
+		#indicadores.row
+			.container
+				article.span_12
+					p Sesame snaps gummies biscuit liquorice tiramisu.
+
+		.container.row
+			#content.span_8.col
+				section
+					h2 Reportes Financieros
+					mixin paginador()
+					- for (var j = 1; j <= 2; ++j) {
+					article
+						.icono
+						.text
+							h3 Biscuit dragée pastry
+							p Gingerbread pie tart sweet cake sweet cheesecake brownie chocolate bar. Oat cake carrot cake gummies.
+							.actions
+								a(href="#") ver más +
+					- }
+
+				section
+					h2 Calendario de Eventos
+					mixin paginador()
+					article
+						.icono 
+						.text
+							h3 Biscuit dragée pastry
+							p Gingerbread pie tart sweet cake sweet cheesecake brownie chocolate bar. Oat cake carrot cake gummies.
+							.actions
+								a(href="#") ver más +
+
+			#sidebar.span_4.col
+				section
+					h2 AMX y la OCDE
+					.paginador
+						hr
+					- for (var j = 1; j <= 2; ++j) {
+					article
+						.icono
+						.text
+							p Gingerbread pie tart sweet cake sweet cheesecake brownie chocolate bar. Oat cake carrot cake gummies.
+							.actions
+								a(href="#") ver más +
+					- }
+
+				section#registro
+					h2 Registro
+					.paginador
+						hr
+					article
+						p Gingerbread pie tart sweet cake sweet cheesecake brownie chocolate bar. Oat cake carrot cake gummies.
+						h4 Javier Escandon
+						a(href="#") mail@americamovil.com
+
+		include includes/footer		

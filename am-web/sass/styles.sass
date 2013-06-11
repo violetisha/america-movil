@@ -1,0 +1,204 @@
+// vars
+$dark-gray: #333333
+$blue: #123e72
+$light-blue: #9dc8eb
+$medium-blue: #6588b0
+$light-gray: #999999
+$shadow: 0px 0px 5px rgba(0,0,0,.5)
+
+// imports
+@import "compass/css3"
+@import "compass/reset"
+@import "compass/typography"
+@import "font-awesome"
+@import "font-opensans"
+@import "responsive-gs-12col"
+//@import "icons/*.png"
+
+// mixins
+@mixin clearfix 	
+	&:before,
+	&:after 	
+		content: ""	
+		display: table	
+		
+	&:after 	
+		clear: both	
+		
+	*zoom: 1
+
+body
+	border-top: 4px solid $blue
+	font-family: 'OpenSansRegular', Arial, sans
+a 
+	color: $medium-blue
+	text-decoration: none
+	@include single-transition(color, .3s)
+	&:hover
+		color: $blue
+h1 a, h2 a, h3 a, h4 a
+	color: inherit
+	&:hover
+		color: inherit
+
+h3
+	font-size: 1.1em
+	color: $dark-gray
+	padding-bottom: 10px
+p
+	color: darken($light-gray, 20)
+	font-size: .9em
+	padding-bottom: 10px
+h2
+	font-size: 1.5em
+
+.container
+	max-width: 960px
+
+header
+	margin-bottom: 0 !important
+	text-align: right
+
+	> div
+		margin: .4em 0
+	#logo
+		margin: 0
+		text-align: left
+		img
+			width: 100%
+			height: auto
+	
+	#meta
+		margin-top: .8em
+		a
+			margin-left: 20px
+			span
+				color: $light-gray
+	#search
+		
+		input
+			width: 70%
+			padding: 3px
+		span
+			color: $light-gray
+			margin-left: 10px
+			font-size: 1.3em
+	nav
+		margin-top: 1em
+		li 
+			display: inline
+			a
+				margin-left: 3%
+				font-size: 1.1em
+				padding-bottom: 16px
+
+#magazine 
+	background: url(../img/foto-01.jpg)
+	height: 379px
+
+	#news
+		height: 379px
+		background: rgba(6,26,46,.6)
+		
+		h2
+			color: white
+			text-shadow: 1px 1px 2px rgba(0,0,0,.5)
+			font-size: 1.2em
+			font-weight: bold
+			padding: 15px 10px 10px
+		p
+			padding: 5px 10px
+			color: lighten($light-gray,30)
+			text-shadow: 1px 1px 1px rgba(0,0,0,.5)
+		
+		.actions
+			margin: 0
+			a
+				color: $light-blue
+				text-shadow: 1px 1px 1px rgba(0,0,0,.5)
+				font-weight: bold
+
+
+.actions
+	padding: 5px 10px 10px
+	text-align: right
+	border-bottom: 1px dashed $light-blue
+	margin: 0 0 15px 0
+	a
+		color: $medium-blue
+		&:hover
+			color: $blue
+#indicadores
+	background: $blue
+	padding: 15px
+	text-align: right
+	@include single-box-shadow(rgba(0,0,0,.3), 0, 5px, 10px)
+	p
+		color: white
+		padding: 0
+		font-size: 1em
+
+.icono 
+	width: 60px
+	height: 60px
+	background: #ccc
+	float: left
+	margin-right: 15px
+
+.paginador
+	position: relative
+	padding-bottom: 10px
+	a
+		position: absolute
+		top: -10px
+		font-size: 1.4em
+		background: white
+		
+		&.left
+			right: 20px
+		&.right
+			right: 0px
+	hr 
+		padding-top: 1px
+		background: url(../img/hr.png)
+		border: none
+
+footer
+	background: $blue
+	padding: 15px
+	@include clearfix 
+	p
+		color: white
+		padding: 0
+		font-size: .8em
+
+		&:first-child
+			float: left
+		&:last-child
+			float: right
+			text-align: right
+			color: $medium-blue
+
+		a
+			color: $light-blue
+			padding: 0 10px
+			display: inline-block
+			clear: both
+			text-decoration: none
+
+			&:hover
+				color: white
+
+// responsive
+
+@media ( max-width : 1000px )
+	nav.col
+		width: 100%
+		margin-left: 0
+
+@media ( max-width : 768px ) 
+	#search, #meta
+		display: none
+
+	#logo
+		
