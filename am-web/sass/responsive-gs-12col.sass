@@ -3,31 +3,15 @@
 //	URL - http://responsive.gs
 //	VERSION - 2.0
 //	LICENSED UNDER GPL & MIT
+//  Sass Tweaks - violetarosales.com
 
-// 	SET ALL ELEMENTS BOX-SIZING TO BORDER-BOX
-//	If you need support for IE7 and lower use polyfill: https://github.com/Schepp/box-sizing-polyfill */
 // *  -webkit-box-sizing: border-box
 //	-moz-box-sizing: border-box
 //	box-sizing: border-box 
 
-// MAIN CONTAINER
 .container	
 	margin: 0 auto
-
-
-// SELF CLEARING FLOATS - CLEARFIX METHOD
-.row:after, .col:after, .clr:after, .group:after  
-	content: "" 
-	display: block 
-	height: 0 
-	clear: both 
-	visibility: hidden 
-
-
-// DEFAULT ROW STYLES - set according to preference
-.row
-	margin-bottom: 1.5em
-			
+	@include clearfix 
 								  
 /* DEFAULT COLUMN STYLES */
 .col
@@ -35,42 +19,86 @@
 	float: left
 	width: 100%
 
-
 @media ( min-width : 768px ) 
 	.col
 		margin-left: 2%
-	
 
-
-
-/* RESET MARGINS */
 .col:first-child
-	margin-left: 0  /* all browsers except IE6 and lower */
-
+	margin-left: 0 
 
 /* COLUMN WIDTH ON DISPLAYS +768px */
-@media ( min-width : 768px ) 
+@media ( min-width : 768px )
 	.span_1
-		width: 6.5% 
+		width: 6.5%
 	.span_2
-		width: 15.0% 
+		width: 15.0%
 	.span_3
-		width: 23.5% 
+		width: 23.5%
 	.span_4
-		width: 32.0% 
+		width: 32.0%
 	.span_5
-		width: 40.5% 
+		width: 40.5%
 	.span_6
-		width: 49.0% 
+		width: 49.0%
 	.span_7
-		width: 57.5% 
+		width: 57.5%
 	.span_8
-		width: 66.0% 
+		width: 66.0%
 	.span_9
-		width: 74.5% 
+		width: 74.5%
 	.span_10
-		width: 83.0% 
+		width: 83.0%
 	.span_11
-		width: 91.5% 
+		width: 91.5%
 	.span_12
-		width: 100% 
+		width: 100%
+
+// asignamos los valores que le corresponden a cada caja usando @extend .clase ;-)
+header
+	@extend .container
+
+#logo, #sidebar
+	@extend .col
+	@extend .span_4
+
+#meta, #search, nav, #featured-info
+	@extend .col
+	@extend .span_8
+
+#news
+	@extend .span_4
+
+// RESPONSIVE
+
+@media ( max-width : 1000px )
+	header
+		nav
+			width: 100%
+			margin-left: 0
+			margin-top: 0
+			margin-bottom: 1em
+
+@media ( max-width : 768px ) 
+	#search, #meta
+		display: none
+	#logo
+		// siendo 320px de ancho, lo minimo en pantalla... Peeero, hay que dejar espacio para el menu
+		width: 240px
+		float: right
+	header
+		#nav-mobile
+			display: block
+
+		nav#main-nav
+			height: 0px
+			overflow: hidden
+
+			li
+				display: block
+				text-align: left
+				a
+					display: block
+					padding: 16px
+					border-bottom: 1px solid $light-blue
+					margin: 0
+			@include single-box-shadow(rgba(0,0,0,.1), 0, 5px, 10px, 0, inset)

@@ -12,7 +12,6 @@ $shadow: 0px 0px 5px rgba(0,0,0,.5)
 @import "compass/typography"
 @import "font-awesome"
 @import "font-opensans"
-@import "responsive-gs-12col"
 //@import "icons/*.png"
 
 // mixins
@@ -26,6 +25,11 @@ $shadow: 0px 0px 5px rgba(0,0,0,.5)
 		clear: both	
 		
 	*zoom: 1
+
+@mixin container 
+	max-width: 960px
+//-----------------------
+
 
 body
 	border-top: 4px solid $blue
@@ -58,6 +62,9 @@ h2
 header
 	margin-bottom: 0 !important
 	text-align: right
+	margin-bottom: 1.5em
+	@include clearfix
+	@include container
 
 	> div
 		margin: .4em 0
@@ -83,14 +90,28 @@ header
 			color: $light-gray
 			margin-left: 10px
 			font-size: 1.3em
-	nav
+	nav#main-nav
 		margin-top: 1em
+		@include single-transition(height, .3s)
+
 		li 
 			display: inline
 			a
 				margin-left: 3%
 				font-size: 1.1em
 				padding-bottom: 16px
+	
+	#nav-mobile
+		float: left
+		display: none
+		a
+			background: $light-blue
+			font-size: 24px
+			line-height: 1em
+			padding: 5px 10px 6px
+			top: 43px
+			left: 10px
+			position: absolute
 
 #magazine 
 	background: url(../img/foto-01.jpg)
@@ -133,10 +154,16 @@ header
 	padding: 15px
 	text-align: right
 	@include single-box-shadow(rgba(0,0,0,.3), 0, 5px, 10px)
+	margin-bottom: 1.5em
 	p
-		color: white
+		color: $light-blue
 		padding: 0
-		font-size: 1em
+		font-size: .9em
+		span
+			color: white
+
+#content
+	margin-bottom: 1.5em
 
 .icono 
 	width: 60px
@@ -163,10 +190,17 @@ header
 		background: url(../img/hr.png)
 		border: none
 
+#featured-info > section, #sidebar > section
+	margin-bottom: 1.5em
+
+
 footer
 	background: $blue
 	padding: 15px
-	@include clearfix 
+
+	.container
+		@include clearfix 
+
 	p
 		color: white
 		padding: 0
@@ -189,16 +223,19 @@ footer
 			&:hover
 				color: white
 
-// responsive
+// menu móvil
+.close
+	display: none
+	@include single-box-shadow(rgba(0,0,0,.3), 0, 0, 5px, 0px, inset)
+	background: lighten($light-blue, 5) !important
 
-@media ( max-width : 1000px )
-	nav.col
-		width: 100%
-		margin-left: 0
+#main-nav:target + #nav-mobile
+	.open
+		display: none 
+	.close
+		display: block
 
-@media ( max-width : 768px ) 
-	#search, #meta
-		display: none
+#main-nav:target
+	height: 204px
 
-	#logo
-		
+@import "responsive-gs-12col"

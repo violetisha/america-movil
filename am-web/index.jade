@@ -6,11 +6,11 @@ html
 	
 	body
 
-		header.row.container
-			#logo.span_4.col
+		header
+			#logo
 				img(src="img/logo-america-movil.png")
 
-			#meta.span_8.col
+			#meta
 				a(href="#") 
 					span.icon-envelope
 					|  Contacto
@@ -20,10 +20,11 @@ html
 				a(href="#") 
 					span.icon-flag
 					|  English
-			#search.span_8.col
+			#search
 				input(type="text")
 				span.icon-search
-			nav.span_8.col
+
+			nav#main-nav
 				ul
 					li
 						a(href="#") Presencia
@@ -34,9 +35,15 @@ html
 					li
 						a(href="#") Sala de Prensa
 
+			#nav-mobile
+				a(href="#main-nav").open
+					span.icon-reorder
+				a(href="#").close
+					span.icon-reorder
+
 		#magazine
 			.container
-				#news.span_4
+				#news
 					- for (var j = 1; j <= 3; ++j) {
 					.new
 						h2 Cupcake ipsum dolor sit amet gummies
@@ -45,13 +52,19 @@ html
 							a(href="#") ver más +
 					- }
 
-		#indicadores.row
+		#indicadores
 			.container
-				article.span_12
-					p Sesame snaps gummies biscuit liquorice tiramisu.
+				p Indicadores Financieros  =  
+					span AMXA 00.00%  
+					| | 
+					span AMX 00.00%
+					| | 
+					span AMXL 00.00%
+					| | 
+					span AMOV 00.00%
 
-		.container.row
-			#content.span_8.col
+		#content.container
+			#featured-info
 				section
 					h2 Reportes Financieros
 					mixin paginador()
@@ -76,7 +89,7 @@ html
 							.actions
 								a(href="#") ver más +
 
-			#sidebar.span_4.col
+			#sidebar
 				section
 					h2 AMX y la OCDE
 					.paginador
