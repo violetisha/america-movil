@@ -42,7 +42,11 @@ html
 					span.icon-reorder
 
 		#magazine
-			.container
+			#slider
+				img(src='img/foto-01.jpg')
+				img(src='img/foto-02.jpg')
+				img(src='img/foto-03.jpg')
+			.container.absoluto
 				#news
 					- for (var j = 1; j <= 3; ++j) {
 					.new
@@ -112,4 +116,5 @@ html
 						h4 Javier Escandon
 						a(href="#") mail@americamovil.com
 
+		include includes/scripts		
 		include includes/footer		

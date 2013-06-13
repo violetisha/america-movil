@@ -1,0 +1,54 @@
+include includes/mixines
+!!! 5
+html
+	include includes/head
+	include includes/scripts
+	
+	body
+
+		header
+			#logo
+				img(src="img/logo-america-movil.png")
+
+			#meta
+				a(href="#") 
+					span.icon-envelope
+					|  Contacto
+				a(href="#") 
+					span.icon-rss
+					|  RSS
+				a(href="#") 
+					span.icon-flag
+					|  English 
+			#search
+				input(type="text")
+				span.icon-search
+
+			include includes/main-nav
+
+		#magazine-interno
+			.container
+				img(src="img/foto-04.jpg")
+
+		#content.container
+			#secondary-nav
+				h2 Nosotros
+				ul
+					li
+						a(href="").active Introducción
+					li
+						a(href="") Directorio
+					li
+						a(href="") Consejo de Administración
+					li
+						a(href="") Accionistas Principales
+
+			section#information
+				article
+					h1 Introducción
+					.paginador
+						hr
+					p Cupcake ipsum dolor sit amet brownie candy canes candy chocolate bar. Lemon drops liquorice cheesecake bonbon cupcake ice cream cookie gummies croissant. Chocolate bar gingerbread chocolate cake cookie. Chupa chups jujubes lollipop fruitcake. Biscuit sweet marshmallow sesame snaps chocolate dessert. Candy marshmallow chocolate ice cream chocolate. Donut jelly-o chocolate bar chocolate cake chocolate bar toffee oat cake sesame snaps wafer. Pudding cookie bear claw wafer dragée. Chocolate cake lollipop cookie. Cotton candy chupa chups brownie marshmallow icing bonbon. Carrot cake cookie jelly beans muffin. Sweet roll ice cream chupa chups sugar plum croissant. Wafer cupcake caramels oat cake dessert sweet roll gingerbread. Toffee dessert biscuit faworki croissant sugar plum.
+					p Sesame snaps gummies biscuit liquorice tiramisu. Faworki biscuit biscuit topping fruitcake chocolate cake sweet roll. Lollipop donut cookie pudding muffin toffee marzipan soufflé. Cookie apple pie cake jelly-o jelly-o donut marshmallow. Lemon drops cupcake sweet roll cake tart candy canes soufflé lollipop. Bear claw marshmallow bear claw chupa chups dragée sesame snaps wafer. Chupa chups lemon drops macaroon marzipan cake tart lemon drops.
+		include includes/scripts		
+		include includes/footer		
