@@ -48,12 +48,12 @@ html
 				img(src='img/foto-03.jpg')
 			.container.absoluto
 				#news
+					h2 Últimas Noticias
+					mixin paginador
 					- for (var j = 1; j <= 3; ++j) {
 					.new
 						h2 Cupcake ipsum dolor sit amet gummies
 						p México DF a 30 de mayo de 2013
-						.actions
-							a(href="#") ver más +
 					- }
 
 		#indicadores
@@ -76,10 +76,9 @@ html
 					article
 						.icono
 						.text
-							h3 Biscuit dragée pastry
+							h3 
+								a(href="#") Biscuit dragée pastry
 							p Gingerbread pie tart sweet cake sweet cheesecake brownie chocolate bar. Oat cake carrot cake gummies.
-							.actions
-								a(href="#") ver más +
 					- }
 
 				section
@@ -88,10 +87,9 @@ html
 					article
 						.icono 
 						.text
-							h3 Biscuit dragée pastry
+							h3 
+								a(href="#") Biscuit dragée pastry
 							p Gingerbread pie tart sweet cake sweet cheesecake brownie chocolate bar. Oat cake carrot cake gummies.
-							.actions
-								a(href="#") ver más +
 
 			#sidebar
 				section
@@ -103,8 +101,6 @@ html
 						.icono
 						.text
 							p Gingerbread pie tart sweet cake sweet cheesecake brownie chocolate bar. Oat cake carrot cake gummies.
-							.actions
-								a(href="#") ver más +
 					- }
 
 				section#registro

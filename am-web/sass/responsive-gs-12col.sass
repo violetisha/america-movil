@@ -67,20 +67,38 @@ header
 	@extend .span_8
 
 #news
-	@extend .span_3
+	width: 290px
 	
 
 // RESPONSIVE
 
 @media ( max-width : 1000px )
+	*
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box 
+	
+	#featured-info, #sidebar, #information
+		padding: 0 15px
+
 	header
 		nav
 			width: 100%
 			margin-left: 0
 			margin-top: 0
-			margin-bottom: 1em
+			margin-bottom: 1em	
+
+	footer
+		p, p:last-child, p:first-child
+			float: none
+			text-align: center
+			a
+				padding: 5px 10px
 
 @media ( max-width : 768px ) 
+	#news
+		width: 50%
+
 	#search, #meta, #secondary-nav
 		display: none
 	#logo
@@ -94,6 +112,7 @@ header
 		nav#main-nav
 			height: 0px
 			overflow: hidden
+			margin: 0em
 			@include single-box-shadow(rgba(0,0,0,.1), 0, 5px, 10px, 0, inset)
 			li
 				display: block
@@ -113,3 +132,8 @@ header
 						&:last-child 
 							a
 								border-bottom: 1px solid $light-blue
+						&.active
+
+@media ( max-width : 500px )
+	#news
+		width: 100%
