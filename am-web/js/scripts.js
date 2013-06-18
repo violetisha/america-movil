@@ -1,4 +1,5 @@
 $(function() {
+	// slider
 	$('#slider').slidesjs({
 		width: 1480,
 		height: 380,
@@ -20,5 +21,20 @@ $(function() {
 				speed: 800
 			}
 		}
+	});
+	// -----------------------------
+});
+
+// MENU
+$(window).load(function(){
+ 	var altura = $(window).height();
+
+ 	$('.open').click(function() {
+		$('header').css("height",altura)
+		$('#main-nav').css("height",(altura - 121))
+	});
+
+	$('.close').click(function() {
+		$('header').css("height","auto")
 	});
 });
