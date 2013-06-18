@@ -263,10 +263,20 @@ footer
 				color: white
 
 // menu móvil
-.close-active
+.close
 	display: none
 	@include single-box-shadow(rgba(0,0,0,.3), 0, 0, 5px, 0px, inset)
 	background: lighten($light-blue, 5) !important
+
+#main-nav:target + #nav-mobile
+	.open
+		display: none 
+	.close
+		display: block
+
+#main-nav:target
+	//height: 204px
+	height: auto
 
 // slider
 .slidesjs-control img
