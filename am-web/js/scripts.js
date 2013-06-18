@@ -1,4 +1,5 @@
 $(function() {
+	// slider
 	$('#slider').slidesjs({
 		width: 1480,
 		height: 380,
@@ -21,4 +22,13 @@ $(function() {
 			}
 		}
 	});
+	//----------------------------------------------
+
+	// Menu
+    $('#nav-mobile a').click(function() {
+    	//$('#main-nav').slideDown("slow")
+    	$('#main-nav').css({"height":"209px","display":"block"});
+    });
+    //----------------------------------------------
+
 });
