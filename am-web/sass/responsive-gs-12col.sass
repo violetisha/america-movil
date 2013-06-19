@@ -11,15 +11,7 @@
 
 .container	
 	margin: 0 auto
-	&:before,
-	&:after 	
-		content: ""	
-		display: table	
-		
-	&:after 	
-		clear: both	
-		
-	*zoom: 1
+	@include clearfix 
 								  
 /* DEFAULT COLUMN STYLES */
 .col
@@ -103,26 +95,17 @@ header
 			a
 				padding: 5px 10px
 
-@media ( max-width : 768px )
-	body
-		border-top: none
+@media ( max-width : 768px ) 
+	#news
+		width: 50%
+
+	#search, #meta, #secondary-nav
+		display: none
+	#logo
+		// siendo 320px de ancho, lo minimo en pantalla... Peeero, hay que dejar espacio para el menu
+		width: 240px
+		float: right
 	header
-		position: fixed
-		z-index: 99999
-		background: white
-		@include single-box-shadow(rgba(0,0,0,.1), 0, 5px, 10px)
-		border-top: 4px solid $blue
-		
-		#news
-			width: 50%
-
-		#search, #meta, #secondary-nav
-			display: none
-		#logo
-			// siendo 320px de ancho, lo minimo en pantalla... Peeero, hay que dejar espacio para el menu
-			width: 240px
-			float: right
-
 		#nav-mobile
 			display: block
 
@@ -130,10 +113,7 @@ header
 			height: 0px
 			overflow: hidden
 			margin: 0em
-
 			@include single-box-shadow(rgba(0,0,0,.1), 0, 5px, 10px, 0, inset)
-			overflow-y: scroll
-
 			li
 				display: block
 				text-align: left
@@ -153,11 +133,6 @@ header
 							a
 								border-bottom: 1px solid $light-blue
 						&.active
-	#magazine, #magazine-interno
-		margin-top: 121px
-	
-	#secondary-nav
-		display: none
 
 @media ( max-width : 500px )
 	#news
