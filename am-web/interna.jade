@@ -7,7 +7,7 @@ html
 	body
 
 		header
-			#logo
+			#logo 
 				img(src="img/logo-america-movil.png")
 
 			#meta 
@@ -23,6 +23,12 @@ html
 			#search
 				input(type="text")
 				span.icon-search
+
+			#nav-mobile
+				a(href="#main-nav").open
+					span.icon-reorder
+				a(href="#").close
+					span.icon-reorder 
 
 			include includes/main-nav
 
