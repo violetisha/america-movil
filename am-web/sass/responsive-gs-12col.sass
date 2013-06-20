@@ -5,9 +5,10 @@
 //	LICENSED UNDER GPL & MIT
 //  Sass Tweaks - violetarosales.com
 
-// *  -webkit-box-sizing: border-box
-//	-moz-box-sizing: border-box
-//	box-sizing: border-box 
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box 
 
 .container	
 	margin: 0 auto
@@ -73,10 +74,6 @@ header
 // RESPONSIVE
 
 @media ( max-width : 1000px )
-	*
-		-webkit-box-sizing: border-box
-		-moz-box-sizing: border-box
-		box-sizing: border-box 
 	
 	#featured-info, #sidebar, #information
 		padding: 0 15px
@@ -106,6 +103,7 @@ header
 		width: 240px
 		float: right
 	header
+		height: 117px
 		#nav-mobile
 			display: block
 
@@ -113,15 +111,25 @@ header
 			height: 0px
 			overflow: hidden
 			margin: 0em
-			@include single-box-shadow(rgba(0,0,0,.1), 0, 5px, 10px, 0, inset)
-			li
-				display: block
-				text-align: left
-				>a
+			@include single-box-shadow(rgba(0,0,0,.3), 0, 5px, 15px)
+			>ul
+				@include single-box-shadow(rgba(0,0,0,.1), 0, 5px, 10px, 0, inset)
+				
+				li
 					display: block
-					padding: 16px
-					border-bottom: 1px solid $light-blue
-					margin: 0
+					text-align: left
+					>a
+						display: block
+						padding: 16px
+						border-bottom: 1px solid $light-blue
+						margin: 0
+
+						&:hover
+							background: #eee
+						&.activo
+							background: $blue
+							color: white
+
 				ul
 					display: block
 					li
@@ -129,6 +137,12 @@ header
 							font-size: .9em
 							color: $dark-gray
 							border-bottom: 1px dashed $light-blue
+							
+							&:hover
+								background: #f7f7f7
+								color: $blue
+
+
 						&:last-child 
 							a
 								border-bottom: 1px solid $light-blue
