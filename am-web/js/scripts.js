@@ -29,7 +29,7 @@
 
   $(document).on('ready', init);
 
-  if ($(window).width() < 768) {
+  if ($(window).width() <= 768) {
     $("#main-nav > ul > li > a").attr("href", "#main-nav");
     $("#main-nav > ul > li > a").click(function() {
       if ($(this).hasClass("activo")) {

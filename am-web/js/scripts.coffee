@@ -24,7 +24,7 @@ init = ->
 $(document).on 'ready', init
 
 #submenu
-if $(window).width() < 768
+if $(window).width() <= 768
 
 	$("#main-nav > ul > li > a").attr "href", "#main-nav"
 
