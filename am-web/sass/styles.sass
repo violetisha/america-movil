@@ -139,7 +139,7 @@ header
 		height: 380px
 		position: absolute
 		top: 0px
-		z-index: 9999
+		z-index: 90
 		background: rgba(6,26,46,.6)
 		
 		.paginador a
@@ -261,50 +261,6 @@ footer
 
 			&:hover
 				color: white
-
-// menu móvil
-.close
-	display: none
-	@include single-box-shadow(rgba(0,0,0,.3), 0, 0, 5px, 0px, inset)
-	background: lighten($light-blue, 5) !important
-
-#main-nav:target + #nav-mobile
-	.open
-		display: none 
-		z-index: 999
-	.close
-		display: block
-		z-index: 999
-
-#main-nav:target
-	//height: 204px
-	height: auto
-	position: absolute
-	top: 0px
-	padding-top: 117px
-	z-index: 99
-
-	ul
-		background: white
-
-// submenu
-#sub-acerca, #sub-relaciones, #sub-sala
-	height: 0px
-	overflow: hidden
-	display: none
-	@include transition-property(height)
-	@include transition-duration(0.5s)
-	@include transition-timing-function(ease)
-
-#link-acerca.activo + ul
-	height: 282px
-	display: block
-#link-relaciones.activo + ul
-	height: 752px
-	display: block
-#link-sala.activo + ul
-	height: 141px
-	display: block
 
 // slider
 .slidesjs-control img

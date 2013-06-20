@@ -1,4 +1,4 @@
-$ ->
+init = ->
 	
 	# slider
 	$("#slider").slidesjs
@@ -21,12 +21,16 @@ $ ->
 			fade:
 				speed: 800
 
-
+$(document).on 'ready', init
 
 #submenu
-$("#main-nav > ul li a").click ->
-	if $(this).hasClass("activo")
-		$(this).removeClass "activo"
-	else
-		$("#main-nav > ul li a").removeClass "activo"
-		$(this).addClass "activo"
+if $(window).width() < 768
+
+	$("#main-nav > ul > li > a").attr "href", "#main-nav"
+
+	$("#main-nav > ul > li > a").click ->
+		if $(this).hasClass("activo")
+			$(this).removeClass "activo"
+		else
+			$("#main-nav > ul > li > a").removeClass "activo"
+			$(this).addClass "activo"
