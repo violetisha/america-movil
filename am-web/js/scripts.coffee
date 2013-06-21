@@ -23,14 +23,23 @@ init = ->
 
 $(document).on 'ready', init
 
-#submenu
-if $(window).width() <= 768
+resizing = ->
+	#submenu
+	if $(window).width() <= 768
 
-	$("#main-nav > ul > li > a").attr "href", "#main-nav"
+		$("#main-nav > ul > li > a").attr "href", "#main-nav"
 
-	$("#main-nav > ul > li > a").click ->
-		if $(this).hasClass("activo")
-			$(this).removeClass "activo"
-		else
-			$("#main-nav > ul > li > a").removeClass "activo"
-			$(this).addClass "activo"
+		$("#main-nav > ul > li > a").click ->
+			if $(this).hasClass("activo")
+				$(this).removeClass "activo"
+			else
+				$("#main-nav > ul > li > a").removeClass "activo"
+				$(this).addClass "activo"
+
+	# en lugar de esto, vamos a tener que hacer un ciclo, que itere entre todos los a
+	# y que guarde todos los href en un arreglo, para vovlerselos a poner, jaja XD
+	else $("#main-nav > ul > li > a").attr "href", "interna.html"
+
+resizing()
+
+$(window).on 'resize', resizing

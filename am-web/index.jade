@@ -1,3 +1,4 @@
+
 include includes/mixines
 !!! 5
 html
@@ -6,31 +7,7 @@ html
 	
 	body
 
-		header
-			#logo
-				img(src="img/logo-america-movil.png") 
-
-			#meta
-				a(href="#") 
-					span.icon-envelope
-					|  Contacto 
-				a(href="#") 
-					span.icon-rss
-					|  RSS
-				a(href="#") 
-					span.icon-flag
-					|  English
-			#search
-				input(type="text")
-				span.icon-search
-
-			include includes/main-nav
-			
-			#nav-mobile
-				a(href="#main-nav").open
-					span.icon-reorder
-				a(href="#").close
-					span.icon-reorder
+		include includes/header
 
 		#magazine
 			#slider
@@ -101,7 +78,5 @@ html
 					article
 						p Gingerbread pie tart sweet cake sweet cheesecake brownie chocolate bar. Oat cake carrot cake gummies.
 						h4 Javier Escandon
-						a(href="#") mail@americamovil.com
-
-		include includes/scripts		
+						a(href="#") mail@americamovil.com	
 		include includes/footer		
