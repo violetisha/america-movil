@@ -5,6 +5,22 @@
 //	LICENSED UNDER GPL & MIT
 //  Sass Tweaks - violetarosales.com
 
+// mixins
+@mixin clearfix 	
+	&:before,
+	&:after 	
+		content: ""	
+		display: table	
+		
+	&:after 	
+		clear: both	
+		
+	*zoom: 1
+
+@mixin container 
+	max-width: 960px
+//-----------------------
+
 *
 	-webkit-box-sizing: border-box
 	-moz-box-sizing: border-box
